@@ -1,0 +1,4 @@
+streamlit run streamlit_app.py
+
+netstat -ano | findstr :8501
+taskkill /PID <PID> /F

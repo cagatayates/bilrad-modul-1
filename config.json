@@ -1,0 +1,55 @@
+{
+    "data": {
+      "train_data_path": "data/combined_data.npy",
+      "train_labels_path": "data/combined_labels.npy",
+      "val_split": 0.2,
+      "shuffle": true
+    },
+    "model": {
+      "in_channels": 2,
+      "num_emitters": 10,
+      "base_ch": 64,
+      "depth": 5,
+      "norm": "gn",
+      "dropout": 0.15,
+      "up_mode": "linear",
+      "bottleneck_dilation": 2,
+      "encoder_kernel_sizes": [3, 3, 5, 5, 5],
+      "groups_gn": 8,
+      "use_residual": true
+    },
+    "training": {
+      "epochs": 60,
+      "batch_size": 4,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "lambda_bce": 0.5,
+      "bce_pos_weight": 10.0,
+      "empty_weight": 0.1,
+      "grad_clip": 1.0,
+      "amp": true,
+      "seed": 42,
+      "exist_threshold": 0.35,
+      "use_dynamic_bce_pos_weight": true,
+      "use_spatial_cost": true,
+      "spatial_cost_weight": 0.3,
+      "center_weight": 0.2,
+      "duration_weight": 0.15,
+      "start_weight": 0.1,
+      "end_weight": 0.1,
+      "use_relative_spatial_cost": true
+    },
+    "windowing": {
+      "use_windows": true,
+      "window_len": 10240,
+      "window_stride": 5120,
+      "include_tail_window": true,
+      "seq_len": 5 
+    },
+    "device": "auto",
+    "save": {
+      "out_dir": "checkpoints",
+      "model_name": "unet1d_pit_case1_N3"
+    }
+  }
+  

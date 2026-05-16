@@ -1,0 +1,5 @@
+[
+    { "emitter_id": 0, "mode": "staggered", "pri_us": 800.0 },
+    { "emitter_id": 1, "mode": "wobulated",  "pri_us": 500.0 },
+    { "emitter_id": 2, "mode": "jittered",     "pri_us": 400.0 }
+]
